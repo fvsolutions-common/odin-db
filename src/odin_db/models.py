@@ -28,8 +28,8 @@ class ODINDBModelType(str, Enum):
 class OdinDBTypeDefinitionModel(BaseModel):
     type: Literal["type_definition"] = Field(default="type_definition", description="Type of the type definition")
     size: int = Field(description="Size of the structure in bytes")
-    structure: "dict[str, OdinDBTypeDefinitionModel | ODINDBModelType]" = Field(
-        description="Structure of the type definition, key value based"
+    structure: "ODINDBModelType | list[ODINDBModelType] | dict[str, OdinDBTypeDefinitionModel | ODINDBModelType]" = (
+        Field(description="Structure of the type definition, key value based")
     )
 
 
@@ -68,5 +68,5 @@ class OdinDBModel(BaseModel):
     description: str
     creation_timestamp: float  # Unix timestamp
     configuration_hash: int
-    types: dict[str, OdinDBTypeDefinitionModel]|None = Field(description="Type definitions for the model")
+    types: dict[str, OdinDBTypeDefinitionModel] | None = Field(description="Type definitions for the model")
     root: OdinDBParameterGroupModel
