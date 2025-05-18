@@ -4,6 +4,8 @@ from .models import (
     OdinDBParameterGroupModel,
     ODINDBModelType,
     OdinDBTypeDefinitionModel,
+    OdinDBArrayModel,
+    OdinDBVectorModel,
 )
 
 __all__ = [
@@ -12,5 +14,6 @@ __all__ = [
     "OdinDBParameterGroupModel",
     "ODINDBModelType",
     "OdinDBTypeDefinitionModel",
-    "OdinDBTypeDefinitionRootModel",
+    "OdinDBArrayModel",
+    "OdinDBVectorModel",
 ]
