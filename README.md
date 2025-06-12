@@ -1,5 +1,7 @@
 # ODIN-DB
 
+Odin DB is a set of models to be able to interpret a .odin file
+
 ## Development
 
 This project depends on UV for managing dependencies.
